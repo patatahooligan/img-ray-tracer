@@ -42,7 +42,7 @@ void render(const Sphere &sphere) {
 		for (size_t i = 0; i < width; i++) {
 			float x = (2 * (i + 0.5) / (float)width - 1)*tan(fov / 2.)*width / (float)height;
 			float y = -(2 * (j + 0.5) / (float)height - 1)*tan(fov / 2.);
-			const Ray ray{ {0.f, 0.f, 0.f}, Vec3f(x, y, -1).unit_vector() };
+			const Ray ray{ {0.f, 0.f, 0.f}, Vec3f(x, y, 1).unit_vector() };
 			if (sphere.check_ray_intersection(ray))
 				framebuffer[i + j * width] = { 1.f, 1.f, 1.f };
 			else
@@ -62,7 +62,7 @@ void render(const Sphere &sphere) {
 }
 
 int main() {
-	Sphere sphere{ {0.f, 0.f, -2.f}, 1.f };
+	Sphere sphere{ {0.f, 0.f, 2.f}, 1.f };
 	render(sphere);
 	return 0;
 }
