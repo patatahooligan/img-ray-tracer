@@ -1,8 +1,9 @@
 #ifndef PCH_H
 #define PCH_H
 
-#include <vector>
-#include <fstream>
 #include <algorithm>
+#include <cassert>
+#include <fstream>
+#include <vector>
 
 #endif //PCH_H
